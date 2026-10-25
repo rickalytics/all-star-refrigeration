@@ -1314,15 +1314,15 @@ const CTABanner = ({ navigate }) => (
         aria-label="Book service. Go to request form"
         style={{
           display: 'inline-block',
-          background: 'transparent',
-          color: 'white',
+          background: 'white',
+          color: 'var(--flame)',
           padding: '8px 18px',
           borderRadius: 999,
-          fontWeight: 600,
+          fontWeight: 700,
           fontSize: '0.85rem',
           letterSpacing: '0.08em',
           marginBottom: 16,
-          border: '1px solid rgba(255,255,255,1)',
+          border: '2px solid white',
           cursor: 'pointer',
           fontFamily: fonts.body,
         }}
@@ -1340,8 +1340,8 @@ const CTABanner = ({ navigate }) => (
           <PhoneIcon /> <span className="footer-phone-num">{PHONE}</span>
         </a>
         <button onClick={() => navigate('contact', { scrollToForm: true })} style={{
-          display: 'inline-flex', alignItems: 'center', gap: 8, background: 'none', color: 'rgba(255,255,255,0.7)',
-          padding: '18px 28px', borderRadius: 60, border: '1px solid rgba(255,255,255,0.2)', cursor: 'pointer',
+          display: 'inline-flex', alignItems: 'center', gap: 8, background: 'white', color: 'var(--flame)',
+          padding: '18px 28px', borderRadius: 60, border: '2px solid white', cursor: 'pointer',
           fontWeight: 600, fontSize: '1rem', fontFamily: fonts.body, transition: 'all 0.3s'
         }}>
           <CalendarIcon /> Schedule Online
@@ -2151,7 +2151,7 @@ const ServiceDetailPage = ({ serviceId, navigate }) => {
         <a href={PHONE_HREF} style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: 'var(--flame)', color: 'white', padding: '11px 20px', borderRadius: 60, textDecoration: 'none', fontWeight: 600, letterSpacing: '0.04em', fontSize: '0.95rem', boxShadow: '0 6px 25px rgba(196,30,36,0.35)', fontFamily: fonts.body }}>
           <PhoneIcon /> Call for {SERVICE_CALL_SHORT}
         </a>
-        <button onClick={() => navigate('contact', { scrollToForm: true })} style={{ display: 'inline-flex', alignItems: 'center', gap: 6, background: 'none', color: 'rgba(255,255,255,0.7)', padding: '11px 18px', borderRadius: 60, border: '1px solid rgba(255,255,255,0.2)', cursor: 'pointer', fontWeight: 600, fontSize: '0.92rem', fontFamily: fonts.body }}>
+        <button onClick={() => navigate('contact', { scrollToForm: true })} style={{ display: 'inline-flex', alignItems: 'center', gap: 6, background: 'white', color: 'var(--flame)', padding: '11px 18px', borderRadius: 60, border: '2px solid white', cursor: 'pointer', fontWeight: 600, fontSize: '0.92rem', fontFamily: fonts.body }}>
           Schedule Online
         </button>
       </div>
