@@ -781,6 +781,13 @@ const PHONE = "(602) 763-7600";
 const PHONE_HREF = "tel:+16027637600";
 const EMAIL = "allstarrefrigeration@gmail.com";
 const EMAIL_HREF = "mailto:allstarrefrigeration@gmail.com";
+/** From Joe David. Days of the week were not specified, so the site states the clock time only. */
+const HOURS = "7 AM – 5 PM MST";
+const ROC_NUMBER = "294864";
+const ROC_LABEL = `ROC ${ROC_NUMBER}`;
+const PHOENIX_SINCE = "1999";
+const WARRANTY_INSTALL = "New installs include a 10-year warranty and 2 years of labor.";
+const WARRANTY_PARTS = "Parts carry a 1-year warranty.";
 
 /** Lead magnet. Promoted sitewide. */
 const SERVICE_CALL_PRICE = "$89";
@@ -849,7 +856,7 @@ const PHOTO_STRIP = [
   {
     src: "/photos/image10.jpeg",
     title: "Professional techs",
-    subtitle: `Flat ${SERVICE_CALL_PRICE} service call. Book online 24/7 or call 9–5. Easy.`,
+    subtitle: `Flat ${SERVICE_CALL_PRICE} service call. Call ${HOURS}.`,
   },
   {
     src: "/photos/image1.jpeg",
@@ -897,12 +904,12 @@ const SERVICES = [
     hero: "Your AC died. We're already loading the truck.",
     heroSub: "In Phoenix, a broken AC isn't an inconvenience. It's an emergency. We treat it like one.",
     details: [
-      "Same-day emergency response during business hours, often within 2 hours",
+      `Service during business hours, ${HOURS}`,
       "We diagnose the real problem, not just the symptom",
       "Upfront pricing before any work begins",
-      "Common repairs completed on first visit. We stock parts",
-      "24/7 availability including weekends and holidays",
-      "No overtime charges or 'emergency fees'"
+      "Common repairs completed on the first visit when the parts are on the truck",
+      "Same-day visits when the schedule allows",
+      `${ROC_LABEL}. Licensed, bonded, and insured`
     ],
     scenarios: [
       { title: "Compressor failure", desc: "The most dreaded sound: silence from your outdoor unit. We carry common compressor parts and can often get you running same-day." },
@@ -923,11 +930,12 @@ const SERVICES = [
     heroSub: "A properly sized, properly installed system is the difference between comfort and regret. We get it right the first time.",
     details: [
       "Manual J load calculation. We size to your actual home, not a guess",
-      "Top-tier brands at competitive prices",
+      "Ask which brands we install. We match the equipment to the home.",
       "Full removal and disposal of old equipment",
-      "Clean, professional installation with photo documentation",
-      "Full system warranty plus our workmanship guarantee",
-      "Financing options available"
+      "Clean, professional installation",
+      WARRANTY_INSTALL,
+      WARRANTY_PARTS,
+      "Financing available through a third party"
     ],
     scenarios: [
       { title: "System is 15+ years old", desc: "Modern systems use 30-50% less energy. The math usually works out in your favor within a few years." },
@@ -990,25 +998,27 @@ const SERVICES = [
   }
 ];
 
-const REVIEWS = [
-  { text: "Our AC died at 2pm on a Saturday in July. Every other company said Monday at the earliest. All Star was at our door in under two hours. My kids were back to playing in a cool house by dinner.", name: "Sarah M.", area: "Gilbert, AZ", initials: "SM" },
-  { text: "After getting quoted $4,500 from a big chain for a 'full system replacement,' I called All Star for a second opinion. Turns out it was a $180 fix. Honest people are hard to find. These guys are the real deal.", name: "Robert J.", area: "Chandler, AZ", initials: "RJ" },
-  { text: "Just moved here from Ohio. Had no idea who to call when our AC started making a horrible noise. Found All Star on Nextdoor and I'm so glad I did. Felt like calling a friend, not a contractor.", name: "Diana T.", area: "Mesa, AZ", initials: "DT" },
-  { text: "They talked me OUT of replacing my unit. Said it had another 5 years easy with a $200 repair. What company does that? All Star does. Customer for life.", name: "Marcus L.", area: "Scottsdale, AZ", initials: "ML" },
-  { text: "I'm a single mom and the AC going out with two toddlers is genuinely scary in this heat. All Star came same day, charged me fair, and even showed me how to check my filter myself. Above and beyond.", name: "Jessica R.", area: "Tempe, AZ", initials: "JR" },
-  { text: "Had three companies come look at a noise in my system. Two said I needed a new unit. All Star found a loose fan blade and fixed it in 20 minutes. Integrity matters.", name: "Tom K.", area: "Phoenix, AZ", initials: "TK" }
+/** Facts Joe confirmed. Not customer quotes. */
+const CREDENTIALS = [
+  { title: `Phoenix since ${PHOENIX_SINCE}`, text: "The company began in Chicago and relocated to Phoenix in 1999. Still serving homeowners and businesses across the Valley." },
+  { title: ROC_LABEL, text: "Licensed, bonded, and insured for residential and commercial heating and cooling." },
+  { title: "BBB Accredited", text: "BBB Accredited Business. The 2026 badge is on the truck." },
+  { title: "Install warranty", text: `${WARRANTY_INSTALL} ${WARRANTY_PARTS}` },
+  { title: "Third-party financing", text: "Financing for new systems is available through a third party. Ask when you book." },
+  { title: HOURS, text: "Call during these hours, or send a request anytime. We call back during business hours." },
 ];
 
 const SERVICE_AREAS = ["Phoenix", "Scottsdale", "Tempe", "Mesa", "Gilbert", "Chandler", "Glendale", "Peoria", "Surprise", "Avondale", "Goodyear", "Buckeye"];
 
 const FAQS = [
   { q: `What’s included in the ${SERVICE_CALL_PRICE} service call?`, a: `It covers a trip to your home, a full diagnostic of your system, and a clear, written quote before any repair work. You’re not paying for a vague “trip charge.” You’re paying for answers and transparency. If you approve repairs, we’ll apply the service call toward the work when it makes sense. We’ll explain that on site.` },
-  { q: "How fast can you get here?", a: "For emergencies, we aim for same-day service, often within 2 hours depending on our current schedule. We prioritize by severity, so if your house is 90°+ with kids or elderly family members, you jump to the front of the line." },
-  { q: "Do you charge extra for weekends or after-hours?", a: "No. We don't believe in punishing people for having an emergency at an inconvenient time. Our rates are our rates, period." },
+  { q: "What are your hours?", a: `We are open ${HOURS}. Call during those hours, or send a request anytime and we will call you back during business hours.` },
+  { q: "How fast can you get here?", a: `We schedule during business hours (${HOURS}) and aim for same-day service when the schedule allows.` },
+  { q: "What warranty do you offer?", a: `${WARRANTY_INSTALL} ${WARRANTY_PARTS}` },
   { q: "How much does a typical repair cost?", a: "It depends on what's wrong and the type of system you have, but we believe you should have a ballpark before you ever call. Most common repairs (capacitors, contactors, minor electrical) land between $180–$450, with larger repairs (motors, coils, refrigerant issues) typically between $450–$1,200. We always give you a written, line‑item estimate before we start, so there are no surprises." },
   { q: "Should I repair or replace my AC?", a: "General rule: if your system is under 10 years old and the repair is under $1,000, repair it. Over 15 years with a major failure? Probably time to replace. We'll always give you our honest recommendation, even if it means less money for us." },
-  { q: "Do you offer financing?", a: "Yes. We work with financing partners to offer affordable monthly payment options for new system installations. Ask us for details." },
-  { q: "Are you licensed and insured?", a: "Absolutely. Full ROC license, full liability insurance, and all techs are background-checked and certified. We're happy to provide documentation." }
+  { q: "Do you offer financing?", a: "Yes. Financing for new installations is available through a third party. Ask us when you book and we will walk you through it." },
+  { q: "Are you licensed and insured?", a: `Yes. Arizona Registrar of Contractors license ${ROC_LABEL}. Licensed, bonded, and insured.` }
 ];
 
 // --------------- SHARED COMPONENTS ---------------
@@ -1041,7 +1051,7 @@ const EmergencyBar = ({ navigate }) => (
       </button>
       <span style={{ opacity: 0.85 }}>🌡️ Phoenix Heat Alert</span>
       <span>
-        AC down? 9–5 calls · 24/7 online booking.{' '}
+        AC down? Call {HOURS}.{' '}
         <a href={PHONE_HREF} className="footer-phone-num" style={{ color: 'white', textDecoration: 'none', borderBottom: '2px solid rgba(255,255,255,0.5)', fontWeight: 600 }}>{PHONE}</a>
       </span>
     </div>
@@ -1063,7 +1073,7 @@ const Header = ({ currentPage, navigate, contactNavTarget }) => {
     { label: "Home", page: "home" },
     { label: "Services", page: "services", dropdown: true },
     { label: "About", page: "about" },
-    { label: "Reviews", page: "reviews" },
+    { label: "Credentials", page: "reviews" },
     { label: "Contact", page: "contact" },
     { label: "FAQ", page: "contact", scrollToFaq: true },
   ];
@@ -1228,8 +1238,7 @@ const Footer = ({ navigate }) => (
           Locally owned AC repair and installation serving the Phoenix metro area. Your neighbors, not a corporation.
         </p>
         <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginTop: 16 }}>
-          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: 38, height: 38, borderRadius: 8, background: 'rgba(255,255,255,0.1)', border: '1px solid rgba(255,255,255,0.15)', fontFamily: fonts.display, fontSize: '0.95rem', color: '#22C55E', lineHeight: 1 }}>A+</div>
-          <span style={{ color: 'rgba(255,255,255,0.55)', fontSize: '0.82rem', lineHeight: 1.35 }}>BBB Accredited<br />Since 2017</span>
+          <img src="/photos/image0.jpeg" alt="BBB Accredited Business 2026" style={{ width: 148, height: 'auto', borderRadius: 8, background: 'white' }} />
         </div>
       </div>
       <div>
@@ -1245,7 +1254,7 @@ const Footer = ({ navigate }) => (
       </div>
       <div>
         <div style={{ color: 'rgba(255,255,255,0.7)', fontWeight: 700, fontSize: '0.8rem', letterSpacing: '0.12em', textTransform: 'uppercase', marginBottom: 16 }}>Company</div>
-        {[{ label: 'About Us', page: 'about' }, { label: 'Reviews', page: 'reviews' }, { label: 'Contact', page: 'contact' }, { label: 'FAQ', page: 'contact', scrollToFaq: true }].map(item => (
+        {[{ label: 'About Us', page: 'about' }, { label: 'Credentials', page: 'reviews' }, { label: 'Contact', page: 'contact' }, { label: 'FAQ', page: 'contact', scrollToFaq: true }].map(item => (
           <div key={item.label} style={{ marginBottom: 10 }}>
             <button onClick={() => (item.scrollToFaq ? navigate('contact', { scrollToFaq: true }) : navigate(item.page))} style={{ background: 'none', border: 'none', color: 'rgba(255,255,255,0.6)', fontSize: '0.9rem', cursor: 'pointer', padding: '8px 0', fontFamily: fonts.body, transition: 'color 0.2s' }}
               onMouseEnter={e => e.currentTarget.style.color = 'rgba(255,255,255,0.85)'}
@@ -1275,7 +1284,7 @@ const Footer = ({ navigate }) => (
       <p style={{ margin: '0 0 8px' }}>AC repair · AC installation · heating repair · heat pump service · seasonal maintenance · refrigeration</p>
       <div className="footer-legal-meta" style={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap', gap: '6px 20px', marginTop: 10 }}>
         <span>© 2026 All Star Refrigeration. All rights reserved.</span>
-        <span>ROC Licensed</span><span>Fully Insured</span><span>Phoenix, AZ</span>
+        <span>{ROC_LABEL}</span><span>Licensed, bonded & insured</span><span>Phoenix, AZ</span>
       </div>
     </div>
   </footer>
@@ -1321,7 +1330,7 @@ const CTABanner = ({ navigate }) => (
         {SERVICE_CALL_SHORT.toUpperCase()}
       </button>
       <h3 style={{ fontFamily: fonts.display, fontWeight: 600, letterSpacing: '-0.01em', fontSize: 'clamp(2.2rem, 5.5vw, 3.35rem)', color: 'white', lineHeight: 1.08, marginBottom: 16 }}>Don&apos;t sweat it. Start with {SERVICE_CALL_PRICE}.</h3>
-      <p style={{ fontSize: '1.1rem', color: 'rgba(255,255,255,0.55)', marginBottom: 36, lineHeight: 1.6 }}>One call between 9–5 (or book online 24/7). A real tech, a clear diagnosis, and pricing you&apos;ll see in writing, starting with our flat {SERVICE_CALL_SHORT}.</p>
+      <p style={{ fontSize: '1.1rem', color: 'rgba(255,255,255,0.55)', marginBottom: 36, lineHeight: 1.6 }}>Call {HOURS}, or send a request anytime and we will call you back during business hours. A real tech, a clear diagnosis, and pricing you&apos;ll see in writing, starting with our flat {SERVICE_CALL_SHORT}.</p>
       <div style={{ display: 'flex', gap: 14, justifyContent: 'center', flexWrap: 'wrap' }}>
         <a href={PHONE_HREF} style={{
           display: 'inline-flex', alignItems: 'center', gap: 10, background: 'var(--flame)', color: 'white',
@@ -1338,7 +1347,7 @@ const CTABanner = ({ navigate }) => (
           <CalendarIcon /> Schedule Online
         </button>
       </div>
-      <p style={{ marginTop: 20, color: 'rgba(255,255,255,0.3)', fontSize: '0.88rem' }}>Phones answered 9–5 • Online booking 24/7</p>
+      <p style={{ marginTop: 20, color: 'rgba(255,255,255,0.3)', fontSize: '0.88rem' }}>Open {HOURS}</p>
     </div>
   </section>
 );
@@ -1392,7 +1401,7 @@ const HomePage = ({ navigate }) => (
             Same-day AC repair for homes and businesses across Phoenix.
           </p>
           <p className="anim-fadeInUp anim-d4" style={{ fontSize: 'clamp(0.98rem, 1.9vw, 1.08rem)', color: 'rgba(255,255,255,0.65)', lineHeight: 1.65, marginBottom: 0, maxWidth: 560 }}>
-            Licensed techs. Upfront pricing. Real people who answer the phone.{' '}
+            {ROC_LABEL}. Licensed, bonded, and insured. Upfront pricing. Real people who answer the phone.{' '}
             <span style={{ color: 'rgba(255,255,255,0.9)', fontWeight: 600 }}>Because when your AC quits, you need action fast.</span>
           </p>
         </div>
@@ -1535,8 +1544,8 @@ const HomePage = ({ navigate }) => (
     >
       <div className="home-trust-bar" style={{ maxWidth: 1180, margin: '0 auto' }}>
         {[
-          { icon: <StarIcon />, label: 'A+ BBB Rated' },
-          { icon: <ClockIcon />, label: '10+ Years Experience' },
+          { icon: <StarIcon />, label: 'BBB Accredited' },
+          { icon: <ClockIcon />, label: `Phoenix since ${PHOENIX_SINCE}` },
           { icon: <SnowflakeIcon />, label: 'Same-Day Service' },
           { icon: <UsersIcon />, label: 'Residential & Commercial' },
         ].map((item, i) => (
@@ -1665,24 +1674,23 @@ const HomePage = ({ navigate }) => (
       <div style={{ maxWidth: 1100, margin: '0 auto' }}>
         <Reveal>
           <div style={{ textAlign: 'center' }}>
-            <SectionTag>Real Phoenix homeowners</SectionTag>
+            <SectionTag>On the record</SectionTag>
           </div>
         </Reveal>
         <div className="interaction-card-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(260px, 100%), 1fr))', gap: 16 }}>
-          {REVIEWS.slice(0, 2).map((r, i) => (
-            <Reveal key={i} delay={i * 80}>
+          {CREDENTIALS.slice(0, 2).map((item, i) => (
+            <Reveal key={item.title} delay={i * 80}>
               <MagneticCard>
                 <div style={{ background: 'white', borderRadius: 16, padding: '22px 22px 20px', borderLeft: `4px solid ${REVIEW_BORDER_ACCENT}`, boxShadow: '0 4px 20px rgba(15,23,42,0.06)', display: 'flex', flexDirection: 'column', height: '100%', boxSizing: 'border-box' }}>
-                  <div style={{ display: 'flex', gap: 3, marginBottom: 10 }}>{[...Array(5)].map((_, j) => <StarIcon key={j} />)}</div>
-                  <p style={{ fontSize: '0.92rem', lineHeight: 1.65, color: '#4A5568', fontStyle: 'italic', margin: '0 0 14px', flex: 1 }}>&ldquo;{r.text.slice(0, 180)}{r.text.length > 180 ? '…' : ''}&rdquo;</p>
-                  <div style={{ fontWeight: 700, color: 'var(--midnight)', fontSize: '0.88rem' }}>{r.name} · {r.area}</div>
+                  <div style={{ fontFamily: fonts.display, fontWeight: 600, color: 'var(--midnight)', fontSize: '1.05rem', marginBottom: 8 }}>{item.title}</div>
+                  <p style={{ fontSize: '0.92rem', lineHeight: 1.65, color: '#4A5568', margin: 0 }}>{item.text}</p>
                 </div>
               </MagneticCard>
             </Reveal>
           ))}
         </div>
         <div style={{ textAlign: 'center', marginTop: 18 }}>
-          <button type="button" onClick={() => navigate('reviews')} style={{ background: 'none', border: 'none', color: 'var(--cool)', fontWeight: 700, fontSize: '0.92rem', cursor: 'pointer', textDecoration: 'underline', fontFamily: fonts.body }}>Read more reviews</button>
+          <button type="button" onClick={() => navigate('reviews')} style={{ background: 'none', border: 'none', color: 'var(--cool)', fontWeight: 700, fontSize: '0.92rem', cursor: 'pointer', textDecoration: 'underline', fontFamily: fonts.body }}>License, warranty, and hours</button>
         </div>
       </div>
     </section>
@@ -1703,7 +1711,7 @@ const HomePage = ({ navigate }) => (
         <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
           {[
             { icon: <ThermIcon />, iconBg: '#FDEAEA', iconColor: 'var(--flame)', title: "The 3AM wake-up", desc: "House is 86°. Kids can't sleep. You need someone now, not a voicemail." },
-            { icon: <SnowflakeIcon />, iconBg: '#E3F0FA', iconColor: 'var(--cool)', title: "The weekend emergency", desc: "It's Saturday, 112° outside. Big companies charge double. We don't." },
+            { icon: <SnowflakeIcon />, iconBg: '#E3F0FA', iconColor: 'var(--cool)', title: "The afternoon it quits", desc: "It's 112° and the system is down. Call during business hours and we will get you on the schedule." },
             { icon: <HeartIcon />, iconBg: '#FEF3C7', iconColor: '#D97706', title: "The new homeowner", desc: "Just moved to Phoenix. Old unit looks sketchy. You need honest answers, not an upsell." }
           ].map((s, i) => (
             <Reveal key={i} delay={i * 80}>
@@ -1826,8 +1834,8 @@ const HomePage = ({ navigate }) => (
             },
             {
               icon: <ShieldIcon />,
-              title: "Licensed, insured, background-checked",
-              desc: "ROC licensed, fully insured, and techs you’re comfortable having in your home, day or night."
+              title: "Licensed, bonded, and insured",
+              desc: `${ROC_LABEL}. Residential and commercial. The license number is on this site if you want to look it up.`
             },
             {
               icon: <ThumbsUpIcon />,
@@ -1975,7 +1983,7 @@ const HomePage = ({ navigate }) => (
             {[
               "Straightforward, written estimates before work begins.",
               "Line-by-line invoices so you know exactly what you paid for.",
-              "No surprise “shop fees” or hidden weekend/after-hours add-ons.",
+              `${WARRANTY_INSTALL} ${WARRANTY_PARTS}`,
               "We’ll tell you when a repair isn’t worth it and replacement makes more sense."
             ].map((item, i) => (
               <li key={i} style={{ display: 'flex', gap: 10, alignItems: 'flex-start', fontSize: '0.96rem', color: '#4A5568' }}>
@@ -2042,24 +2050,17 @@ const HomePage = ({ navigate }) => (
       <div style={{ maxWidth: 1100, margin: '0 auto' }}>
         <Reveal>
           <div style={{ textAlign: 'center', marginBottom: 48 }}>
-            <SectionTag>From your neighbors</SectionTag>
-            <h3 style={{ fontFamily: fonts.display, fontWeight: 600, fontSize: 'clamp(1.95rem, 4.4vw, 2.55rem)', color: 'var(--midnight)', lineHeight: 1.1 }}>Phoenix families trust All Star</h3>
+            <SectionTag>What we can stand behind</SectionTag>
+            <h3 style={{ fontFamily: fonts.display, fontWeight: 600, fontSize: 'clamp(1.95rem, 4.4vw, 2.55rem)', color: 'var(--midnight)', lineHeight: 1.1 }}>License, warranty, and hours</h3>
           </div>
         </Reveal>
         <div className="interaction-card-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: 22 }}>
-          {REVIEWS.slice(0, 3).map((r, i) => (
-            <Reveal key={i} delay={i * 80}>
+          {CREDENTIALS.slice(2, 5).map((item, i) => (
+            <Reveal key={item.title} delay={i * 80}>
               <MagneticCard>
-                <div style={{ background: 'var(--warm-white)', borderRadius: 20, padding: 30, borderLeft: `4px solid ${REVIEW_BORDER_ACCENT}`, border: '1px solid rgba(0,0,0,0.06)', borderLeftWidth: 4, borderLeftColor: REVIEW_BORDER_ACCENT, boxShadow: '0 6px 28px rgba(15,23,42,0.07)', display: 'flex', flexDirection: 'column', height: '100%' }}>
-                  <div style={{ display: 'flex', gap: 3, marginBottom: 12 }}>{[...Array(5)].map((_, j) => <StarIcon key={j} />)}</div>
-                  <p style={{ fontSize: '0.95rem', lineHeight: 1.7, color: '#4A5568', fontStyle: 'italic', marginBottom: 18, flex: 1 }}>"{r.text}"</p>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
-                    <div style={{ width: 40, height: 40, borderRadius: '50%', background: 'var(--cool)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'white', fontWeight: 700, fontSize: '0.85rem' }}>{r.initials}</div>
-                    <div>
-                      <div style={{ fontWeight: 700, color: 'var(--midnight)', fontSize: '0.9rem' }}>{r.name}</div>
-                      <div style={{ color: '#718096', fontSize: '0.8rem' }}>{r.area}</div>
-                    </div>
-                  </div>
+                <div style={{ background: 'var(--warm-white)', borderRadius: 20, padding: 30, border: '1px solid rgba(0,0,0,0.06)', borderLeft: `4px solid ${REVIEW_BORDER_ACCENT}`, boxShadow: '0 6px 28px rgba(15,23,42,0.07)', display: 'flex', flexDirection: 'column', height: '100%' }}>
+                  <div style={{ fontFamily: fonts.display, fontWeight: 600, color: 'var(--midnight)', fontSize: '1.15rem', marginBottom: 10 }}>{item.title}</div>
+                  <p style={{ fontSize: '0.95rem', lineHeight: 1.7, color: '#4A5568', margin: 0, flex: 1 }}>{item.text}</p>
                 </div>
               </MagneticCard>
             </Reveal>
@@ -2069,7 +2070,7 @@ const HomePage = ({ navigate }) => (
           <button type="button" onClick={() => navigate('reviews')} style={{ background: 'none', border: '2px solid var(--cool)', color: 'var(--cool)', padding: '12px 28px', borderRadius: 50, fontWeight: 700, fontSize: '0.95rem', cursor: 'pointer', fontFamily: fonts.body, transition: 'all 0.3s' }}
             onMouseEnter={e => { e.currentTarget.style.background = 'var(--cool)'; e.currentTarget.style.color = 'white'; }}
             onMouseLeave={e => { e.currentTarget.style.background = 'none'; e.currentTarget.style.color = 'var(--cool)'; }}
-          >Read More Reviews</button>
+          >See license and warranty</button>
         </div>
       </div>
     </section>
@@ -2366,34 +2367,30 @@ const AboutPage = ({ navigate }) => (
     <section style={{ padding: 'clamp(60px, 8vw, 100px) clamp(24px, 4vw, 80px)', background: 'var(--sand)' }}>
       <div style={{ maxWidth: 800, margin: '0 auto', textAlign: 'center' }}>
         <SectionTag>Our story</SectionTag>
-        <h1 style={{ fontFamily: fonts.display, fontWeight: 600, fontSize: 'clamp(2.2rem, 5.5vw, 3.35rem)', color: 'var(--midnight)', lineHeight: 1.08, marginBottom: 24 }}>Built on frustration.<br />Fueled by <span style={{ color: 'var(--flame)', fontWeight: 600 }}>doing it right.</span></h1>
-        <div style={{ width: 120, height: 120, borderRadius: '50%', background: 'var(--cool)', margin: '0 auto 32px', display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: '0 8px 30px rgba(21,101,160,0.2)', position: 'relative', color: 'white', fontFamily: fonts.display, fontSize: '2rem' }}>
-          <div style={{ position: 'absolute', inset: -6, border: '2px dashed rgba(21,101,160,0.3)', borderRadius: '50%' }} />
-          JD
-        </div>
-        <blockquote style={{ fontFamily: fonts.body, fontSize: 'clamp(1.45rem, 3.2vw, 1.9rem)', fontStyle: 'italic', fontWeight: 400, color: 'var(--midnight)', lineHeight: 1.5, marginBottom: 20, maxWidth: 700, marginLeft: 'auto', marginRight: 'auto' }}>
-          "I didn't start this company to get rich. I started it because I got tired of watching big outfits charge my neighbors a fortune and still make them wait three days in a hot house."
-        </blockquote>
+        <h1 style={{ fontFamily: fonts.display, fontWeight: 600, fontSize: 'clamp(2.2rem, 5.5vw, 3.35rem)', color: 'var(--midnight)', lineHeight: 1.08, marginBottom: 16 }}>Serving the Valley <span style={{ color: 'var(--flame)', fontWeight: 600 }}>since {PHOENIX_SINCE}.</span></h1>
         <div style={{ fontWeight: 700, color: 'var(--midnight)', fontSize: '1.05rem' }}>Joe David</div>
-        <div style={{ color: 'var(--cool)', fontSize: '0.88rem', fontWeight: 500, marginBottom: 36 }}>Owner, All Star Refrigeration, Phoenix, AZ</div>
+        <div style={{ color: 'var(--cool)', fontSize: '0.88rem', fontWeight: 500 }}>Owner, All Star Refrigeration · {ROC_LABEL}</div>
       </div>
     </section>
 
     <section style={{ padding: 'clamp(60px, 8vw, 100px) clamp(24px, 4vw, 80px)', background: 'var(--warm-white)' }}>
       <div style={{ maxWidth: 750, margin: '0 auto' }}>
         <div style={{ fontSize: '1.08rem', lineHeight: 1.85, color: '#4A5568' }}>
-          <p style={{ marginBottom: 20 }}>All Star Refrigeration was born out of frustration. The kind you feel when you're on hold for 45 minutes with a company that has 200 trucks but can't get one to your house before next week. The kind you feel when a tech shows up, spends 10 minutes, and hands you a $1,200 bill for a $40 capacitor.</p>
-          <p style={{ marginBottom: 20 }}>We saw how the big companies operated: volume over quality, upsells over honesty, shareholders over customers. And we thought: <strong style={{ color: 'var(--midnight)' }}>what if someone just did this the right way?</strong></p>
-          <p style={{ marginBottom: 20 }}>That's All Star. We show up fast, we tell you the truth, and we charge you fair. We don't have a marketing department or a fleet of 100 trucks. What we have is a crew that genuinely cares about the people we serve because they're our neighbors, our friends, the families we see at the grocery store and the little league field.</p>
-          <p style={{ marginBottom: 20 }}>Every job, whether it's a $150 capacitor swap or a $10,000 system install, gets the same treatment: <strong style={{ color: 'var(--midnight)' }}>honest diagnosis, upfront pricing, and work done right the first time.</strong> If we wouldn't do it to our own mother's house, we won't do it to yours.</p>
-          <p>We're not trying to be the biggest HVAC company in Phoenix. We're trying to be the one you tell your friends about.</p>
+          <p style={{ marginBottom: 20 }}>With a strong foundation built in Chicago, Illinois, our company began with a commitment to providing dependable HVAC service and building lasting relationships with our customers.</p>
+          <p style={{ marginBottom: 20 }}>In 1999, we proudly relocated our business to Phoenix, Arizona, where we have continued to serve homeowners and businesses throughout the Valley. Over the years, we have built our reputation through quality service, honest recommendations, and a commitment to doing the job right.</p>
+          <p style={{ marginBottom: 20 }}>Our experience includes HVAC service, sales, repairs, and preventative maintenance, helping our customers keep their heating and cooling systems operating efficiently and reliably. Our goal is simple: provide dependable service, quality workmanship, and exceptional customer care on every job.</p>
+          <p>We look forward to continuing to serve the Phoenix Valley for many years to come.</p>
+        </div>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: 16, marginTop: 36 }}>
+          <img src="/photos/image3.jpeg" alt="All Star Refrigeration service van in a Phoenix neighborhood" style={{ width: '100%', aspectRatio: '4 / 3', objectFit: 'cover', borderRadius: 16 }} />
+          <img src="/photos/image1.jpeg" alt="Rear of the All Star van: licensed, bonded, and insured" style={{ width: '100%', aspectRatio: '4 / 3', objectFit: 'cover', borderRadius: 16 }} />
         </div>
 
         <div className="about-values-grid" style={{ marginTop: 60, display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 20 }}>
           {[
-            { icon: <ClockIcon />, title: "Same-Day Service", desc: "Because broken AC in Phoenix is an emergency, not an inconvenience." },
+            { icon: <ClockIcon />, title: "Same-Day When We Can", desc: `Visits during business hours, ${HOURS}, with same-day service when the schedule allows.` },
             { icon: <ThumbsUpIcon />, title: "Honest Pricing", desc: "We tell you the cost before we start. No surprise invoices. Ever." },
-            { icon: <ShieldIcon />, title: "Fully Licensed", desc: "ROC licensed, fully insured, background-checked techs." },
+            { icon: <ShieldIcon />, title: "Fully Licensed", desc: `${ROC_LABEL}. Licensed, bonded, and insured.` },
             { icon: <UsersIcon />, title: "Locally Owned", desc: "We live here, we work here, and our reputation is everything." }
           ].map((v, i) => (
             <div key={i} style={{ background: 'white', borderRadius: 16, padding: 'clamp(16px, 2vw, 28px)', textAlign: 'center', border: '1px solid rgba(0,0,0,0.04)' }}>
@@ -2430,25 +2427,18 @@ const ReviewsPage = ({ navigate }) => (
       <div style={{ maxWidth: 1000, margin: '0 auto' }}>
         <Reveal>
           <div style={{ textAlign: 'center', marginBottom: 50 }}>
-            <SectionTag>Real reviews from real neighbors</SectionTag>
-            <h1 style={{ fontFamily: fonts.display, fontWeight: 600, fontSize: 'clamp(2.2rem, 5.5vw, 3.05rem)', color: 'var(--midnight)', lineHeight: 1.08, marginBottom: 14 }}>What Phoenix says about All Star</h1>
-            <p style={{ fontSize: '1.05rem', color: '#4A5568', maxWidth: 550, margin: '0 auto' }}>We don't run ads with actors. We let our work speak. Here's what our neighbors have to say.</p>
+            <SectionTag>Credentials</SectionTag>
+            <h1 style={{ fontFamily: fonts.display, fontWeight: 600, fontSize: 'clamp(2.2rem, 5.5vw, 3.05rem)', color: 'var(--midnight)', lineHeight: 1.08, marginBottom: 14 }}>What you can check before you call</h1>
+            <p style={{ fontSize: '1.05rem', color: '#4A5568', maxWidth: 620, margin: '0 auto' }}>License number, warranty, financing, and hours. Straight from the owner.</p>
           </div>
         </Reveal>
-        <div className="interaction-card-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: 22 }}>
-          {REVIEWS.map((r, i) => (
-            <Reveal key={i} delay={i * 80}>
+        <div className="interaction-card-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 22 }}>
+          {CREDENTIALS.map((item, i) => (
+            <Reveal key={item.title} delay={i * 80}>
               <MagneticCard>
-                <div style={{ background: 'white', borderRadius: 20, padding: 30, border: '1px solid rgba(0,0,0,0.04)', display: 'flex', flexDirection: 'column' }}>
-                  <div style={{ display: 'flex', gap: 3, marginBottom: 14 }}>{[...Array(5)].map((_, j) => <StarIcon key={j} />)}</div>
-                  <p style={{ fontSize: '0.95rem', lineHeight: 1.7, color: '#4A5568', fontStyle: 'italic', marginBottom: 18, flex: 1 }}>"{r.text}"</p>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
-                    <div style={{ width: 40, height: 40, borderRadius: '50%', background: 'var(--cool)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'white', fontWeight: 700, fontSize: '0.85rem' }}>{r.initials}</div>
-                    <div>
-                      <div style={{ fontWeight: 700, color: 'var(--midnight)', fontSize: '0.9rem' }}>{r.name}</div>
-                      <div style={{ color: '#718096', fontSize: '0.8rem' }}>{r.area}</div>
-                    </div>
-                  </div>
+                <div style={{ background: 'white', borderRadius: 20, padding: 30, border: '1px solid rgba(0,0,0,0.04)', borderLeft: `4px solid ${REVIEW_BORDER_ACCENT}`, display: 'flex', flexDirection: 'column', height: '100%', boxSizing: 'border-box' }}>
+                  <div style={{ fontFamily: fonts.display, fontWeight: 600, color: 'var(--midnight)', fontSize: '1.15rem', marginBottom: 10 }}>{item.title}</div>
+                  <p style={{ fontSize: '0.95rem', lineHeight: 1.7, color: '#4A5568', margin: 0 }}>{item.text}</p>
                 </div>
               </MagneticCard>
             </Reveal>
@@ -2533,7 +2523,7 @@ const ContactPage = ({ navigate }) => {
               }}>
                 <div style={{ width: 48, height: 48, borderRadius: 14, background: 'rgba(255,255,255,0.2)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}><PhoneIcon /></div>
                 <div>
-                  <div style={{ fontWeight: 700, fontSize: '1.1rem' }}>Call 9–5. {PHONE}</div>
+                  <div style={{ fontWeight: 700, fontSize: '1.1rem' }}>Call {HOURS}. {PHONE}</div>
                   <div style={{ fontSize: '0.88rem', opacity: 0.8 }}>Talk to a real person during business hours.</div>
                 </div>
               </a>
@@ -2558,9 +2548,8 @@ const ContactPage = ({ navigate }) => {
               <div className="scenario-card__title">Hours of Operation</div>
               <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
                 {[
-                  { day: 'Phone support', hours: 'Mon–Sat, 9AM–5PM', highlight: true },
-                  { day: 'On-site appointments', hours: 'Mon–Sat, 8AM–7PM' },
-                  { day: 'Online booking', hours: '24/7', highlight: false },
+                  { day: 'Phone and appointments', hours: HOURS, highlight: true },
+                  { day: 'Online requests', hours: 'Anytime. Callback during business hours', highlight: false },
                 ].map((h, i) => (
                   <div key={i} style={{ display: 'flex', justifyContent: 'space-between', gap: 12, fontSize: '0.9rem' }}>
                     <span style={{ color: h.highlight ? 'var(--flame)' : '#3d5266', fontWeight: h.highlight ? 700 : 400 }}>{h.day}</span>
@@ -2719,15 +2708,15 @@ export default function AllStarWebsite() {
       },
       about: {
         title: "About All Star Refrigeration | Locally Owned HVAC in Phoenix, AZ",
-        desc: "Locally owned and operated HVAC company serving the Phoenix metro. 10+ years experience, A+ BBB rated, licensed and insured. Meet the team behind All Star.",
+        desc: `Locally owned HVAC company in Phoenix since ${PHOENIX_SINCE}. ${ROC_LABEL}. BBB accredited. Owner Joe David.`,
       },
       reviews: {
-        title: "Reviews | Phoenix Homeowners Trust All Star Refrigeration",
-        desc: "Read real reviews from Phoenix, Scottsdale, Mesa, Gilbert and Chandler homeowners. See why families trust All Star Refrigeration for AC repair and installation.",
+        title: "License, Warranty, and Hours | All Star Refrigeration Phoenix",
+        desc: `${ROC_LABEL}. New installs: 10-year warranty and 2 years labor. Parts: 1-year warranty. Open ${HOURS}.`,
       },
       contact: {
         title: "Contact All Star Refrigeration | Schedule AC Service in Phoenix",
-        desc: "Schedule your $89 service call or request a free estimate. Call (602) 763-7600 (9–5) or book online 24/7. Same-day appointments when available.",
+        desc: `Schedule your $89 service call. Call (602) 763-7600, ${HOURS}. Send a request anytime.`,
       },
     };
 
