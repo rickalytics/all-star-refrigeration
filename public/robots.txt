@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /api/
 
-Sitemap: https://allstarrefrigerationllc.com/sitemap.xml
+Sitemap: https://allstarhvacaz.com/sitemap.xml

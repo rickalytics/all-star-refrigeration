@@ -2696,11 +2696,11 @@ export default function AllStarWebsite() {
   useEffect(() => { injectStyles(); }, []);
 
   useEffect(() => {
-    const base = "All Star Refrigeration | Fast AC Repair Phoenix AZ. Same-day service.";
+    const base = "All Star Refrigeration | AC Repair in Phoenix, AZ";
     const seoMap = {
       home: {
         title: base,
-        desc: "All Star Refrigeration provides fast, honest AC repair, heating, and refrigeration services across the Phoenix metro area. Same-day service, $89 diagnostic, licensed techs. Call (602) 763-7600.",
+        desc: "AC repair, installation, and heating across the Phoenix metro. Serving the Valley since 1999. ROC 294864. $89 service call. Open 7 AM–5 PM MST. Call (602) 763-7600.",
       },
       services: {
         title: "AC Repair, Installation & Maintenance Services | All Star Refrigeration Phoenix",
@@ -2726,13 +2726,18 @@ export default function AllStarWebsite() {
       if (svc) {
         seo = {
           title: `${svc.title} in Phoenix AZ | All Star Refrigeration`,
-          desc: `${svc.shortDesc} Same-day service, honest pricing. Call (602) 763-7600 or book online.`,
+          desc: `${svc.shortDesc} ${ROC_LABEL}. Open ${HOURS}. Call (602) 763-7600.`,
         };
       }
     }
     if (!seo) seo = seoMap.home;
 
+    const siteUrl = "https://allstarhvacaz.com/";
     document.title = seo.title;
+    const setMeta = (selector, value) => {
+      const el = document.querySelector(selector);
+      if (el) el.setAttribute("content", value);
+    };
     let metaDesc = document.querySelector('meta[name="description"]');
     if (!metaDesc) {
       metaDesc = document.createElement('meta');
@@ -2740,6 +2745,14 @@ export default function AllStarWebsite() {
       document.head.appendChild(metaDesc);
     }
     metaDesc.content = seo.desc;
+    setMeta('meta[property="og:title"]', seo.title);
+    setMeta('meta[property="og:description"]', seo.desc);
+    setMeta('meta[property="og:url"]', siteUrl);
+    setMeta('meta[name="twitter:title"]', seo.title);
+    setMeta('meta[name="twitter:description"]', seo.desc);
+    setMeta('meta[name="twitter:url"]', siteUrl);
+    const canonical = document.querySelector('link[rel="canonical"]');
+    if (canonical) canonical.setAttribute("href", siteUrl);
   }, [page]);
 
   const clearUrlHash = () => {

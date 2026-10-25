@@ -90,7 +90,7 @@ export default async function handler(request) {
 
   const subject = `Lead: ${name} — ${service}`;
   const html = `
-    <h2>New request from allstarrefrigeration.com</h2>
+    <h2>New request from allstarhvacaz.com</h2>
     <table style="font-family:sans-serif;font-size:14px;line-height:1.5;">
       <tr><td><strong>Name</strong></td><td>${escapeHtml(name)}</td></tr>
       <tr><td><strong>Phone</strong></td><td>${escapeHtml(phone)}</td></tr>
